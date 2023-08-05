@@ -24,7 +24,14 @@ export class ProductCategoriesService {
   }
 
   async findAll(): Promise<ProductCategory[]> {
-    return await this.productCategoryModel.find().exec();
+    return await this.productCategoryModel
+      .find()
+      .populate({
+        path: "categoryInfo",
+        model: "ProductCategory",
+        select: "name",
+      })
+      .exec();
   }
 
   async findOne(id: string): Promise<ProductCategory> {
