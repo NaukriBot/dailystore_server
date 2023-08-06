@@ -7,6 +7,7 @@ import { FilesModule } from "./modules/files/files.module";
 import { MailerService } from "./services/mailer/mailer.service";
 import { PipesModule } from "./pipes/pipes.module";
 import { ProductCategoriesModule } from "./modules/categories/product-categories/product-categories.module";
+import { ProductsModule } from "./modules/products/products.module";
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { ProductCategoriesModule } from "./modules/categories/product-categories
     FilesModule,
     PipesModule,
     ProductCategoriesModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService, MailerService],
