@@ -4,10 +4,11 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { FilesModule } from "./modules/files/files.module";
-import { MailerService } from "./services/mailer/mailer.service";
 import { PipesModule } from "./pipes/pipes.module";
 import { ProductCategoriesModule } from "./modules/categories/product-categories/product-categories.module";
 import { ProductsModule } from "./modules/products/products.module";
+import { OrdersModule } from "./modules/orders/orders.module";
+import { AuthenticationModule } from './modules/authentication/authentication.module';
 
 @Module({
   imports: [
@@ -23,9 +24,11 @@ import { ProductsModule } from "./modules/products/products.module";
     PipesModule,
     ProductCategoriesModule,
     ProductsModule,
+    OrdersModule,
+    AuthenticationModule,
   ],
   controllers: [AppController],
-  providers: [AppService, MailerService],
-  exports: [MailerService],
+  providers: [AppService],
+  exports: [],
 })
 export class AppModule {}
